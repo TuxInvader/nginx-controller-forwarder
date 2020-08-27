@@ -1,8 +1,14 @@
-= NGINX Controller - Event Forwarder (Azure Event Hubs)
+= NGINX Controller - Event Forwarder
 :showtitle:
 :toc: left
 
 == About
 
-This is a python script which collects events from the controler API and forwards them to an Azure EventHub.
+This is a python script which collects events from the controler API and forwards them to various places...
+
+* Azure Event Hubs
+
+== Setup for Azure Event Hubs
+
+
 

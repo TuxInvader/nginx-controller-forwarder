@@ -1,0 +1,11 @@
+[Unit]
+Description=FORWARD_DESC
+After=network.target
+
+[Service]
+FORWARD_ENV
+Type=simple
+ExecStart=FORWARD_PYTHON
+User=nobody
+TimeoutSec=0
+Restart=always
