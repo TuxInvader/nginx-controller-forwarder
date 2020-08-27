@@ -8,7 +8,28 @@ This is a python script which collects events from the controler API and forward
 
 * Azure Event Hubs
 
+== Initial Setup
+
+These scripts are designed to run on the same host as the controller.
+Clone this repository to the location where the script will run, and then execute the appropriate setup script.
+
 == Setup for Azure Event Hubs
 
+You will need to have an Azure EventHubs namespace and EventHub configured with a Shared Access Policy with Send permission.
+You will need to make a note of:
+
+  1. Event Hub Connection string
+  2. Event Hub Name
+  3. Controller user
+  4. Controller password
+
+The forwarder will connect to your controller on the localhost and read events from the API before forwarding to Azure.
+
+Execute the `setup-eh-forwarder.sh` script from within the repository to setup a python virtual-env and configure a systemd
+service to run the script. 
+
+You can also run the script manually by setting the following environment variables: `EVENT_HUB_CONN_STR`,
+`EVENT_HUB_NAME`, `CONTROLLER_USER`, and `CONTROLLER_PASS`. Then source the virtual env `source venv/bin/activate` and
+run the forwarder script `eventhub_forwarder.py`
 
 
